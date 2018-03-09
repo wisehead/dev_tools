@@ -1,0 +1,17 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.5.4	//
+REMAIN	clear.cpp	/^const int REMAIN = 128 * 1024 * 1024;	\/\/ 128M$/;"	v
+g_key	clear.cpp	/^key_t g_key = 0xd71140fc;$/;"	v
+g_sem_id	clear.cpp	/^int g_sem_id = -1;$/;"	v
+get_free_mem	clear.cpp	/^long get_free_mem()$/;"	f
+get_value	clear.cpp	/^long get_value(const char *buf)$/;"	f
+help	clear.cpp	/^void help(const char *prog)$/;"	f
+lock	clear.cpp	/^int lock()$/;"	f
+long	clear.cpp	35;"	d	file:
+main	clear.cpp	/^int main(int argc, char *argv[])$/;"	f
+sem_creat	clear.cpp	/^int sem_creat()$/;"	f
+version	clear.cpp	/^void version(const char *prog)$/;"	f

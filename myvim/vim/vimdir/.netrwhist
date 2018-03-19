@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/flashdb/jywang/local/5538/var'
+let g:netrw_dirhist_2='/home/flashdb/jywang/workspace/py_databus_client'
+let g:netrw_dirhist_3='/home/chenhui/cmake/Demo2'
+let g:netrw_dirhist_4='/home/chenhui/cmake/temp'

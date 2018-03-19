@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/Users/baidu/.config'
+let g:netrw_dirhist_2='/Users/baidu/.vim'
+let g:netrw_dirhist_3='/Users/baidu/Desktop/WorkDir/sourcecode/druid/target/surefire-reports'
+let g:netrw_dirhist_4='/Users/baidu/.sqlmap/output/127.0.0.1'
+let g:netrw_dirhist_5='/Users/baidu/Desktop/WorkDir/sourcecode/mola/slight/include/slight'
+let g:netrw_dirhist_6='/Users/baidu/.vim/bundle/Vundle.vim'
+let g:netrw_dirhist_7='/usr/local/homebrew/etc/nginx/conf.d'
+let g:netrw_dirhist_8='/Users/baidu/go/src/github.com/goinaction/code/chapter3/dbdriver/postgres'

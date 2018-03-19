@@ -1,0 +1,227 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+Plugin 'fatih/vim-go'
+Plugin 'Tagbar'
+Plugin 'scrooloose/nerdtree'
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" 设置tagbar的窗口宽度
+let g:tagbar_width=30
+" 映射Tagbar的快捷键,按F8自动打开
+map tb :TagbarToggle<CR>
+map nt :NERDTreeToggle<CR>
+set nu
+syntax enable
+set background=dark
+colorscheme desert
+"colorscheme ron
+set ts=4
+"set expandtab
+set nosta
+set incsearch
+set ruler
+set nocp
+"set noai
+set ai
+"set paste
+set noai
+set smartindent
+let &termencoding=&encoding
+set fileencodings=utf-8,gbk
+set shiftwidth=4
+"set fencs=utf-8,GB18030,ucs-bom,default,latin1
+filetype on 
+filetype plugin on
+"Uset nu
+"set autoindent
+"set cindent
+""set softtabstop=4
+""set shiftwidth=4
+set nobackup
+set noswapfile
+set hlsearch
+map tt :TlistToggle<cr>
+map cc :set filetype=c<cr>
+map sn :set nu<cr>
+map wm :WMToggle<cr>
+map aaa :cs f g 
+map ccc :cs f c 
+map sss :cs f s 
+map fff :cs f f 
+let Tlist_Auto_Open=0
+let Tlist_Exit_OnlyWindow=1
+let Tlist_Show_One_File=1
+set encoding=UTF-8 fileencodings=ucs-bom,UTF-8,cp936
+map <F8> gg=G
+"map <F4> <Esc>:TlistToggle<CR>   
+map <F5> <Esc>:set nonu<CR> 
+map <F6> <Esc>:set nu<CR>  
+map <C-A> ggVGY
+map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+vmap <C-c> y 
+map ttt :TagbarToggle<CR>
+
+let g:winManagerWindowLayout='FileExplorer|TagList' 
+map <span style="color: #00FF00;"><f12></span> :WMToggle<cr>
+imap <span style="color: #00FF00;"><f12></span> <esc><f12>a
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+	\ }
+
+":inoremap ( ()<ESC>i
+":inoremap ) <c-r>=ClosePair(')')<CR>
+":inoremap { {<CR>}<ESC>O
+":inoremap } <c-r>=ClosePair('}')<CR>
+":inoremap [ []<ESC>i
+":inoremap ] <c-r>=ClosePair(']')<CR>
+":inoremap " ""<ESC>i
+":inoremap ' ''<ESC>i
+
+
+
+function! ClosePair(char)
+    if getline('.')[col('.') - 1] == a:char
+        return "\<Right>"
+    else    
+        return a:char
+    endif   
+endfunction
+
+function HeaderPython()
+	call setline(1,         "\#############################################################")
+	call append(line("."),  "\#   File Name: ".expand("%"))
+	call append(line(".")+1,"\#     Autohor: Hui Chen (c) ".strftime("%Y"))
+	call append(line(".")+2,"\#        Mail: chenhui13@baidu.com")
+	call append(line(".")+3,"\# Create Time: ".strftime("%Y/%m/%d-%H:%M:%S"))
+	call append(line(".")+4,"\#############################################################")
+	call append(line(".")+5,"\#!/usr/bin/env python ")
+	call append(line(".")+6,"\#-*- coding:utf8 -*-")
+	normal G
+	normal o
+	normal o
+endf
+autocmd bufnewfile *.py call HeaderPython()
+autocmd BufNewFile *.cpp,*.[ch],*.sh exec ":call SetTitle()"
+func SetTitle()
+    if &filetype == 'sh' 
+        call setline(1,         "\#############################################################")
+        call append(line("."),  "\#   File Name: ".expand("%"))
+        call append(line(".")+1,"\#     Autohor: Hui Chen (c) ".strftime("%Y"))
+        call append(line(".")+2,"\#        Mail: chenhui13@baidu.com")
+        call append(line(".")+3,"\# Create Time: ".strftime("%Y/%m/%d-%H:%M:%S"))
+        call append(line(".")+4,"\#############################################################")
+        call append(line(".")+5,"\#!/bin/sh ")
+        call append(line(".")+6,"")
+     else    
+        call setline(1,         "/*******************************************************************************")
+        call append(line("."),  " *      file name: ".expand("%")."                                               ")
+        call append(line(".")+1," *         author: hui chen. (c) ".strftime("%y")."                             ")
+        call append(line(".")+2," *           mail: chenhui13@baidu.com                                        ")
+        call append(line(".")+3," *   created time: ".strftime("%y/%m/%d-%h:%m                                    "))
+        call append(line(".")+4," * modified time: ".strftime("%y/%m/%d-%h:%m                                    "))
+        call append(line(".")+5," *******************************************************************************/")
+     endif   
+     if &filetype == 'cpp'
+        call append(line(".")+6,"#include <iostream>")
+"       call append(line(".")+7,"using namespace std;")
+        call append(line(".")+8,"")
+     endif   
+     if &filetype == 'c'
+        call append(line(".")+6,"#include <stdio.h>")
+        call append(line(".")+7,"")
+     endif   
+     autocmd BufNewFile * normal G
+endfunc
+
+
+if has("cscope")
+   "set csprg=/usr/bin/cscope
+   set csprg=/usr/local/homebrew/bin/cscope
+   set csto=0
+   set cst 
+   set nocsverb
+   " add any database in current directory
+   if filereadable("cscope.out")
+      cs add cscope.out
+   " else add database pointed to by environment
+   elseif $CSCOPE_DB != ""
+      cs add $CSCOPE_DB
+   endif   
+   set csverb
+endif
+
+"quickfix
+set cscopequickfix=s-,c-,d-,i-,t-,e-
+
+" -- : Grep
+nnoremap <silent> <F3> :Rgrep<CR>
+
+let g:miniBufExplMapWindowNavVim = 1
+let g:miniBufExplMapWindowNavArrows = 1
+let g:miniBufExplMapCTabSwitchBufs = 1
+let g:miniBufExplModSelTarget = 1 
+
+let g:go_highlight_functions = 1 
+let g:go_highlight_methods = 1 
+let g:go_highlight_structs = 1 
+let g:go_highlight_operators = 1 
+let g:go_highlight_build_constraints = 1
+
+"set tags=/home/chenhui/mysql-baidu-5623/tags
+"set tags=/home/chenhui/mysql-baidu-5623/mysqlcpp
+set tags+=/user/baidu/.vim/cpptags
+set tags+=/user/baidu/.vim/linuxtags
+"set tags+=/home/chenhui/mysql-baidu-5623/mysqlcpp
+
+
+"let OmniCpp_NamespaceSearch = 1
+"let OmniCpp_GlobalScopeSearch = 1
+"let OmniCpp_ShowAccess = 1
+"let OmniCpp_ShowPrototypeInAbbr = 1
+"let OmniCpp_MayCompleteDot = 1
+"let OmniCpp_MayCompleteArrow = 1
+"let OmniCpp_MayCompleteScope = 1
+"let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
+"
+"au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
+"set completeopt=menuone,menu,longest
+"
+"super tab
+let g:SuperTabRetainCompletionType=2
+let g:SuperTabDefaultCompletionType="<C-X><C-O>"
+
+
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+

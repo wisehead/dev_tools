@@ -1,0 +1,189 @@
+前几天帮同事跟踪的一个程序莫名退出，没有core dump(当然ulimit是打开的)的问题。我们知道，正常情况下，如果程序因为某种异常条件退出的话，应该会产生core dump，而如果程序正常退出的话，应该是直接或者间接的调用了exit()相关的函数。基于这个事实，我想到了这样一个办法，在程序开始时，通过系统提供的atexit()，向系统注册一个回调函数，在程序调用exit()退出的时候，这个回调函数就会被调用，然后我们在回调函数中打印出当前的函数调用栈，由此便可以知道exit()是在哪里调用，从而上述问题便迎刃而解了。上述方法用来解决类似问题是非常行之有效的。在上面，我提到了在“回调函数中打印出当前的函数调用栈”，相信细心的朋友应该注意到这个了，本文的主要内容就是详细介绍，如何在程序中打印中当前的函数调用栈。
+我之前写过一篇题目为《介绍几个关于C/C++程序调试的函数》的文章，看到这里，请读者朋友先看一下前面这篇，因为本文是以前面这篇文章为基础的。我正是用了backtrace()和backtrace_symbols()这两个函数实现的，下面是一个简单的例子，通过这个例子我们来介绍具体的方法：
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+#include <execinfo .h>
+#include <stdio .h>
+#include <stdlib .h>
+ 
+void fun1();
+void fun2();
+void fun3();
+ 
+void print_stacktrace();
+ 
+int main()
+{
+    fun3();
+}
+ 
+void fun1()
+{
+    printf("stackstrace begin:\n");
+    print_stacktrace();
+}
+ 
+void fun2()
+{
+    fun1();
+}
+ 
+void fun3()
+{
+    fun2();
+}
+ 
+void print_stacktrace()
+{
+    int size = 16;
+    void * array[16];
+    int stack_num = backtrace(array, size);
+    char ** stacktrace = backtrace_symbols(array, stack_num);
+    for (int i = 0; i < stack_num; ++i)
+    {
+        printf("%s\n", stacktrace[i]);
+    }
+    free(stacktrace);
+}
+（说明：下面的介绍采用的环境是ubuntu 11.04, x86_64, gcc-4.5.2）
+
+1. 通过下面的方式编译运行：
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+wuzesheng@ubuntu:~/work/test$ gcc test.cc -o test1
+wuzesheng@ubuntu:~/work/test$ ./test1
+stackstrace begin:
+./test1() [0x400645]
+./test1() [0x400607]
+./test1() [0x400612]
+./test1() [0x40061d]
+./test1() [0x4005ed]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xff) [0x7f5c59a91eff]
+./test1() [0x400529]
+从上面的运行结果中，我们的确看到了函数的调用栈，但是都是16进制的地址，会有点小小的不爽。当然我们可以通过反汇编得到每个地址对应的函数，但这个还是有点麻烦了。不急，且听我慢慢道来，看第2步。
+
+2. 通过下面的方式编译运行：
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+wuzesheng@ubuntu:~/work/test$ gcc test.cc -rdynamic -o test2
+wuzesheng@ubuntu:~/work/test$ ./test2
+stackstrace begin:
+./test2(_Z16print_stacktracev+0x26) [0x4008e5]
+./test2(_Z4fun1v+0x13) [0x4008a7]
+./test2(_Z4fun2v+0x9) [0x4008b2]
+./test2(_Z4fun3v+0x9) [0x4008bd]
+./test2(main+0x9) [0x40088d]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xff) [0x7f9370186eff]
+./test2() [0x4007c9]
+这下终于可以看到函数的名字了，对比一下2和1的编译过程，2比1多了一个-rdynamic的选项，让我们来看看这个选项是干什么的(来自gcc mannual的说明):
+
+1
+2
+-rdynamic
+           Pass the flag -export-dynamic to the ELF linker, on targets that support it. This instructs the linker to add all symbols, not only used ones, to the dynamic symbol table. This option is needed for some uses of "dlopen" or to allow obtaining backtraces from within a program.
+从上面的说明可以看出，它的主要作用是让链接器把所有的符号都加入到动态符号表中，这下明白了吧。不过这里还有一个问题，这里的函数名都是mangle过的，需要demangle才能看到原始的函数。关于c++的mangle/demangle机制，不了解的朋友可以在搜索引擎上搜一下，我这里就不多就介绍了。这里介绍如何用命令来demangle，通过c++filt命令便可以:
+
+1
+2
+wuzesheng@ubuntu:~/work/test$ c++filt < << "_Z16print_stacktracev"
+print_stacktrace()
+写到这里，大部分工作就ok了。不过不知道大家有没有想过这样一个问题，同一个函数可以在代码中多个地方调用，如果我们只是知道函数，而不知道在哪里调用的，有时候还是不够方便，bingo，这个也是有办法的，可以通过address2line命令来完成，我们用第2步中编译出来的test2来做实验(address2line的-f选项可以打出函数名, -C选项也可以demangle)：
+
+1
+2
+3
+4
+wuzesheng@ubuntu:~/work/test$ addr2line -a 0x4008a7 -e test2 -f
+0x00000000004008a7
+_Z4fun1v
+??:0
+Oh no，怎么打出来的位置信息是乱码呢？不急，且看我们的第3步。
+
+3. 通过下面的方式编译运行：
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+wuzesheng@ubuntu:~/work/test$ gcc test.cc -rdynamic -g -o test3
+wuzesheng@ubuntu:~/work/test$ ./test3
+stackstrace begin:
+./test3(_Z16print_stacktracev+0x26) [0x4008e5]
+./test3(_Z4fun1v+0x13) [0x4008a7]
+./test3(_Z4fun2v+0x9) [0x4008b2]
+./test3(_Z4fun3v+0x9) [0x4008bd]
+./test3(main+0x9) [0x40088d]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xff) [0x7fa9558c1eff]
+./test3() [0x4007c9]
+wuzesheng@ubuntu:~/work/test$ addr2line -a 0x4008a7 -e test3 -f -C
+0x00000000004008a7
+fun1()
+/home/wuzesheng/work/test/test.cc:20
+看上面的结果，我们不仅得到了调用栈，而且可以得到每个函数的名字，以及被调用的位置，大功告成。在这里需要说明一下的是，第3步比第2步多了一个-g选项，-g选项的主要作用是生成调试信息，位置信息就属于调试信息的范畴，经常用gdb的朋友相信不会对这个选项感到陌生。

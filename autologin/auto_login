@@ -1,0 +1,23 @@
+#!/usr/bin/expect
+set timeout 10
+catch { spawn ssh chenhui13@relay01.baidu.com }
+
+expect {
+        # 第一次需要手动输入token密码，将控制权交给终端，按'==='回到执行流程中
+        "*relay01.baidu.com's password:" {
+                interact === return
+                send "\r"
+                exp_continue
+        }
+        # 通过共享ssh免密登录relay，自动发起登录远程机器命令
+        #"*bash-baidu-ssl*" { send "ssh chenhui13@tc-dba-csp-test00.tc.baidu.com\r" }
+        "*bash-baidu-ssl*" { send "ssh root@cq01-dba-davinci-srv33.cq01.baidu.com\r" }
+}
+
+#expect {
+#    "*chenhui13@tc-dba-csp-test00.tc.baidu.com ~]\$ " { send "sudo -iu root\r" }
+#}
+
+expect -re "$"
+
+interact

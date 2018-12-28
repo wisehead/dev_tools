@@ -1,0 +1,137 @@
+# Path to your oh-my-zsh installation.
+export ZSH=/Users/baidu/.oh-my-zsh
+
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+ZSH_THEME="robbyrussell"
+
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion. Case
+# sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git autojump osx)
+
+# User configuration
+JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home"
+MAVEN_HOME="/usr/local/homebrew/opt/maven"
+CLASS_PATH="$JAVA_HOME/lib"
+CLASSPATH=".:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar"
+export PATH=".:/Users/baidu/go/bin:/usr/local/homebrew/bin:/usr/local/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$JAVA_HOME/bin:$MAVEN_HOME/bin:/usr/local/homebrew/Cellar/mysql/5.7.11/bin:/usr/local/go/bin"
+# export MANPATH="/usr/local/man:$MANPATH"
+
+source $ZSH/oh-my-zsh.sh
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+export LANG=zh_CN.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# ssh
+# export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+export BASEDIR=/usr/local/homebrew/Cellar/mysql/5.7.11
+alias cdbase="cd $BASEDIR"
+export DATADIR=/usr/local/homebrew/var
+alias cddb="cd $DATADIR"
+export TOP=/Users/baidu/Desktop/WorkDir/sourcecode/dbproxy
+alias cdtop="cd $TOP"
+alias aaa="cd $TOP;vim -t main"
+export ML=/Users/baidu/MachineLearning
+alias cdml="cd $ML";
+#alias aaa="cd $TOP;vim -t log_write_up_to"
+export DESKTOP=/Users/baidu/Desktop
+alias cddesk="cd $DESKTOP"
+export DOWNLOAD=/Users/baidu/Downloads
+alias cddown="cd $DOWNLOAD"
+export HOMEBREW_GITHUB_API_TOKEN=c572b2e453020e1057faa172e9e6a0bfd35852e9
+export APPS=/Applications
+alias cdapp="cd $APPS"
+export WORKDIR=/Users/baidu/Desktop/WorkDir
+alias cdw="cd $WORKDIR"
+export TEMP=/Users/baidu/Desktop/temp
+alias cdtemp="cd $TEMP"
+export SOURCE=/Users/baidu/sourcecode
+alias cdsrc="cd $SOURCE"
+export TRAFODION=/Users/baidu/Desktop/WorkDir/sourcecode/incubator-trafodion
+alias cdtraf="cd $TRAFODION"
+export WORKSPACE=/Users/baidu/java/workspace
+alias cdjava="cd $WORKSPACE"
+export CODELIB=/Users/baidu/codelib
+alias cdlib="cd $CODELIB"
+alias cdjava="cd $WORKSPACE"
+alias cdp="cd /Users/baidu/intrusion_detect_BRANCH"
+alias cdnode="cd /Users/baidu/Desktop/WorkDir/sourcecode/node_3-7-8-2_PD_BL"
+alias cdbx="cd /Users/baidu/Desktop/百信"
+alias vnode="cdnode;vim ./src/node.cpp"
+alias gorelay="source ~/.bash_profile;/Users/baidu/auto_login"
+#alias go="source ~/.bash_profile;/Users/baidu/auto_login"
+export GOROOT=/usr/local/go
+export GOPATH=/Users/baidu/go
+alias new="source ~/.zshrc"
+alias cdweb="cd /usr/local/homebrew/var/www"
+alias cdcodelib="cd ~/codelib"
+alias cdcode="cd ~/mycode"
+alias vip="vi ~/.zshrc"
+alias cdgo="cd $GOPATH"
+alias cdgoin="cd /Users/baidu/go/src/github.com/goinaction/code"
+alias cdlc="cd /Users/baidu/mycode/cpp/leetcode/Leetcode"
+alias cdpy="cd ~/mycode/PYTHON"
+alias cdbrew="cd /usr/local/homebrew"
+alias subl=\''/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'\'

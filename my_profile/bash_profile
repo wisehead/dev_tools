@@ -1,0 +1,41 @@
+# .bash_profile
+
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then 
+    . ~/.bashrc
+fi
+
+# User specific environment and startup programs
+#enables colorin the terminal bash shell export
+
+export CLICOLOR=1
+#you can use this if you are using a black background:
+#export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
+#sets up thecolor scheme for list export
+#export LSCOLORS=gxfxcxdxbxegedabagacad
+
+alias ls='ls -G'
+#sets up theprompt color (currently a green similar to linux terminal)
+#export PS1='\033[01;32m \u@\h \033[00m:\033[01;36m \w \033[00m\$'
+#export PS1='\033[01;32m\u@\h\033[00m:\033[01;36m\w\033[00m\$ '
+
+#enables colorfor iTerm
+export TERM=xterm-color
+
+#PATH=/opt/compiler/gcc-4.8.2/bin:/ssd4/mysql_ch/bin/:$PATH:$HOME/bin:.:/home/opt/cmake_2.8.4/bin
+#PATH=/opt/compiler/gcc-4.8.2/bin:/ssd4/dbpath5.1/bin/:$PATH:$HOME/bin:.:/home/opt/cmake_2.8.4/bin
+export PATH=$PATH:.:/usr/local/homebrew/bin:/usr/local/go/bin
+
+#export PATH
+unset USERNAME
+export TOP=/Users/baidu/MachineLearning
+alias cdtop="cd $TOP";
+#alias aaa="cd $TOP;vim -t log_write_up_to"
+export DESKTOP=/Users/baidu/Desktop
+alias cddesk="cd $DESKTOP"
+export DOWNLOAD=/Users/baidu/Desktop/temp/download
+alias cddown="cd $DOWNLOAD"
+
+# 
+alias relay="/Users/baidu/auto_login"

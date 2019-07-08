@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<!--[if IE 6]><html class="ie lt-ie8"><![endif]-->
+<!--[if IE 7]><html class="ie lt-ie8"><![endif]-->
+<!--[if IE 8]><html class="ie ie8"><![endif]-->
+<!--[if IE 9]><html class="ie ie9"><![endif]-->
+<!--[if !IE]><!--> <html> <!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+
+  <!-- Start of Baidu Transcode -->
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="MobileOptimized" content="width"/>
+  <meta name="HandheldFriendly" content="true"/>
+  <meta name="mobile-agent" content="format=html5;url=https://www.jianshu.com/p/050fa455bc74">
+  <!-- End of Baidu Transcode -->
+
+    <meta name="description"  content="1.下载VSCode 下载地址 2.安装插件 3.打开一个包含C/C++文件的目录 没有，可以自己创建一个cpp文件 4.command+shift+p打开命令行工具窗口 配置c_cpp_properties.json文件选择C/Cpp: Edit Configurations命令此时会在当前工作空间目录生成.vscode配置目录同时在配置目录会生成一个c_cpp_properties.js...">
+
+  <meta name="360-site-verification" content="604a14b53c6b871206001285921e81d8" />
+  <meta property="wb:webmaster" content="294ec9de89e7fadb" />
+  <meta property="qc:admins" content="104102651453316562112116375" />
+  <meta property="qc:admins" content="11635613706305617" />
+  <meta property="qc:admins" content="1163561616621163056375" />
+  <meta name="google-site-verification" content="cV4-qkUJZR6gmFeajx_UyPe47GW9vY6cnCrYtCHYNh4" />
+  <meta name="google-site-verification" content="HF7lfF8YEGs1qtCE-kPml8Z469e2RHhGajy6JPVy5XI" />
+  <meta http-equiv="mobile-agent" content="format=html5; url=https://www.jianshu.com/p/050fa455bc74">
+
+  <!-- Apple -->
+  <meta name="apple-mobile-web-app-title" content="简书">
+
+    <!--  Meta for Smart App Banner -->
+  <meta name="apple-itunes-app" content="app-id=888237539, app-argument=jianshu://notes/26694763">
+  <!-- End -->
+
+  <!--  Meta for Twitter Card -->
+  <meta content="summary" property="twitter:card">
+  <meta content="@jianshucom" property="twitter:site">
+  <meta content="Mac在VSCode中搭建C/C++环境" property="twitter:title">
+  <meta content="1.下载VSCode 下载地址 2.安装插件 3.打开一个包含C/C++文件的目录 没有，可以自己创建一个cpp文件 4.command+shift+p打开命令行工具窗口 配..." property="twitter:description">
+  <meta content="https://www.jianshu.com/p/050fa455bc74" property="twitter:url">
+  <!-- End -->
+
+  <!--  Meta for OpenGraph -->
+  <meta property="fb:app_id" content="865829053512461">
+  <meta property="og:site_name" content="简书">
+  <meta property="og:title" content="Mac在VSCode中搭建C/C++环境">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.jianshu.com/p/050fa455bc74">
+  <meta property="og:description" content="1.下载VSCode 下载地址 2.安装插件 3.打开一个包含C/C++文件的目录 没有，可以自己创建一个cpp文件 4.command+shift+p打开命令行工具窗口 配置c_cpp_pro...">
+  <!-- End -->
+
+  <!--  Meta for Facebook Applinks -->
+  <meta property="al:ios:url" content="jianshu://notes/26694763" />
+  <meta property="al:ios:app_store_id" content="888237539" />
+  <meta property="al:ios:app_name" content="简书" />
+
+  <meta property="al:android:url" content="jianshu://notes/26694763" />
+  <meta property="al:android:package" content="com.jianshu.haruki" />
+  <meta property="al:android:app_name" content="简书" />
+  <!-- End -->
+
+
+    <title>Mac在VSCode中搭建C/C++环境 - 简书</title>
+
+  <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="Q680MkbLamx3hpHRcKFKl002H0UTLFAT47Sm5pLmNg7LWNHlx/11PV7PQux8UfROz4U94rX4etOEZ5eiqgye3w==" />
+
+  <link rel="stylesheet" media="all" href="//cdn2.jianshu.io/assets/web-30728a1164102859481d.css" />
+  
+  <link rel="stylesheet" media="all" href="//cdn2.jianshu.io/assets/web/pages/notes/show/entry-aa75deb505b1b600256a.css" />
+
+  <link href="//cdn2.jianshu.io/assets/favicons/favicon-e743bfb1821442341c3ab15bdbe804f7ad97676bd07a770ccc9483473aa76f06.ico" rel="shortcut icon" type="image/x-icon">
+      <link rel="apple-touch-icon-precomposed" href="//cdn2.jianshu.io/assets/apple-touch-icons/57-a6f1f1ee62ace44f6dc2f6a08575abd3c3b163288881c78dd8d75247682a4b27.png" sizes="57x57" />
+      <link rel="apple-touch-icon-precomposed" href="//cdn2.jianshu.io/assets/apple-touch-icons/72-fb9834bcfce738fd7b9c5e31363e79443e09a81a8e931170b58bc815387c1562.png" sizes="72x72" />
+      <link rel="apple-touch-icon-precomposed" href="//cdn2.jianshu.io/assets/apple-touch-icons/76-49d88e539ff2489475d603994988d871219141ecaa0b1a7a9a1914f4fe3182d6.png" sizes="76x76" />
+      <link rel="apple-touch-icon-precomposed" href="//cdn2.jianshu.io/assets/apple-touch-icons/114-24252fe693524ed3a9d0905e49bff3cbd0228f25a320aa09053c2ebb4955de97.png" sizes="114x114" />
+      <link rel="apple-touch-icon-precomposed" href="//cdn2.jianshu.io/assets/apple-touch-icons/120-1bb7371f5e87f93ce780a5f1a05ff1b176828ee0d1d130e768575918a2e05834.png" sizes="120x120" />
+      <link rel="apple-touch-icon-precomposed" href="//cdn2.jianshu.io/assets/apple-touch-icons/152-bf209460fc1c17bfd3e2b84c8e758bc11ca3e570fd411c3bbd84149b97453b99.png" sizes="152x152" />
+
+  <!-- Start of 访问统计 -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?0c0e9d9b1e7d617b3e6842e85b9fb068";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+  <!-- End of 访问统计 -->
+</head>
+
+  <!-- 只给10%的用户添加代码 -->
+  <!-- ###第四范式-智能推荐：代码直接复制 无需修改参数### -->
+  <!-- ###功能：上报内容并反馈用户行为### -->
+  <!--
+  -->
+  <body lang="zh-CN" class="reader-black-font">
+    <!-- 全局顶部导航栏 -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="width-limit">
+    <!-- 左上方 Logo -->
+    <a class="logo" href="/"><img src="//cdn2.jianshu.io/assets/web/nav-logo-4c7bbafe27adc892f3046e6978459bac.png" alt="Nav logo" /></a>
+
+    <!-- 右上角 -->
+      <!-- 未登录显示登录/注册/写文章 -->
+      <a class="btn write-btn" target="_blank" href="/writer#/">
+        <i class="iconfont ic-write"></i>写文章
+</a>      <a class="btn sign-up" id="sign_up" href="/sign_up">注册</a>
+      <a class="btn log-in" id="sign_in" href="/sign_in">登录</a>
+
+    <!-- 如果用户登录，显示下拉菜单 -->
+
+    <div id="navbar-jsds-enter">
+    </div>
+
+    <div id="view-mode-ctrl">
+    </div>
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="nav navbar-nav">
+            <li class="tab ">
+              <a href="/">
+                <span class="menu-text">首页</span><i class="iconfont ic-navigation-discover menu-icon"></i>
+</a>            </li>
+            <li class="tab ">
+              <a id="web-nav-app-download-btn" class="app-download-btn" href="/apps?utm_medium=desktop&amp;utm_source=navbar-apps"><span class="menu-text">下载App</span><i class="iconfont ic-navigation-download menu-icon"></i></a>
+            </li>
+          <li class="search">
+            <form target="_blank" action="/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+              <input type="text" name="q" id="q" value="" autocomplete="off" placeholder="搜索" class="search-input" />
+              <a class="search-btn" href="javascript:void(null)"><i class="iconfont ic-search"></i></a>
+</form>          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+    
+<div class="note">
+  <div id="note-fixed-ad-container">
+    <div id="fixed-ad-container">
+      <div id="write-notes-ad"></div>
+      <div id="youdao-fixed-ad"></div>
+      <div id="yuxi-fixed-ad"></div>
+      <div id="_so_pdsBy_0"></div>
+    </div>
+  </div>
+  <div class="post">
+    <div class="article">
+        <h1 class="title">Mac在VSCode中搭建C/C++环境</h1>
+
+        <!-- 作者区域 -->
+        <div class="author">
+          <a class="avatar" href="/u/c93e809dafc4">
+            <img src="//upload.jianshu.io/users/upload_avatars/5352666/740b1543-feb2-49ab-8220-bbc0f52b6482?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96" alt="96" />
+</a>          <div class="info">
+            <span class="name"><a href="/u/c93e809dafc4">sofarsogoo_932d</a></span>
+            <!-- 关注用户按钮 -->
+            <div props-data-classes="user-follow-button-header" data-author-follow-button></div>
+            <!-- 文章数据信息 -->
+            <div class="meta">
+              <!-- 简书钻 -->
+                <span class="jsd-meta">
+                  <i class="iconfont ic-paid1"></i> 1.4
+                </span>
+              <!-- 如果文章更新时间大于发布时间，那么使用 tooltip 显示更新时间 -->
+                <span class="publish-time">2018.04.16 00:28</span>
+              <span class="wordage">字数 394</span>
+            </div>
+          </div>
+          <!-- 如果是当前作者，加入编辑按钮 -->
+        </div>
+
+
+        <!-- 文章内容 -->
+        <div data-note-content class="show-content">
+          <div class="show-content-free">
+            <h4>1.下载VSCode</h4>
+<p><a href="https://link.jianshu.com?t=https%3A%2F%2Fcode.visualstudio.com" target="_blank" rel="nofollow">下载地址</a></p>
+<h4>2.安装插件</h4>
+<div class="image-package">
+<div class="image-container" style="max-width: 700px; max-height: 368px;">
+<div class="image-container-fill" style="padding-bottom: 26.63%;"></div>
+<div class="image-view" data-width="1382" data-height="368"><img data-original-src="//upload-images.jianshu.io/upload_images/5352666-ce771985e55fc46f.png" data-original-width="1382" data-original-height="368" data-original-format="image/png" data-original-filesize="139905"></div>
+</div>
+<div class="image-caption">插件1.png</div>
+</div>
+<div class="image-package">
+<div class="image-container" style="max-width: 700px; max-height: 340px;">
+<div class="image-container-fill" style="padding-bottom: 22.400000000000002%;"></div>
+<div class="image-view" data-width="1518" data-height="340"><img data-original-src="//upload-images.jianshu.io/upload_images/5352666-7784bed8eda45da1.png" data-original-width="1518" data-original-height="340" data-original-format="image/png" data-original-filesize="104742"></div>
+</div>
+<div class="image-caption">插件2.png</div>
+</div>
+<h4>3.打开一个包含C/C++文件的目录</h4>
+<p>没有，可以自己创建一个cpp文件</p>
+<div class="image-package">
+<div class="image-container" style="max-width: 700px; max-height: 386px;">
+<div class="image-container-fill" style="padding-bottom: 35.35%;"></div>
+<div class="image-view" data-width="1092" data-height="386"><img data-original-src="//upload-images.jianshu.io/upload_images/5352666-0d2d5a6ad5b11399.png" data-original-width="1092" data-original-height="386" data-original-format="image/png" data-original-filesize="55385"></div>
+</div>
+<div class="image-caption">cpp.png</div>
+</div>
+<h4>4.command+shift+p打开命令行工具窗口</h4>
+<div class="image-package">
+<div class="image-container" style="max-width: 700px; max-height: 584px;">
+<div class="image-container-fill" style="padding-bottom: 46.87%;"></div>
+<div class="image-view" data-width="1246" data-height="584"><img data-original-src="//upload-images.jianshu.io/upload_images/5352666-74da1e37bb8ad041.png" data-original-width="1246" data-original-height="584" data-original-format="image/png" data-original-filesize="101674"></div>
+</div>
+<div class="image-caption">命令行窗口.png</div>
+</div>
+<p><strong>配置c_cpp_properties.json文件</strong><br>
+选择C/Cpp: Edit Configurations命令<br>
+此时会在当前工作空间目录生成.vscode配置目录<br>
+同时在配置目录会生成一个c_cpp_properties.json文件</p>
+<pre><code>"name": "Mac",
+"includePath": [
+            "${workspaceFolder}",
+            "/Library/Developer/CommandLineTools/usr/include/c++/v1",
+            "/usr/local/include",
+            "/Library/Developer/CommandLineTools/usr/lib/clang/9.0.0/include",
+            "/Library/Developer/CommandLineTools/usr/include",
+            "/usr/include"
+        ],
+</code></pre>
+<p>将要用到的库的路径添加到includePath数组中</p>
+<p><strong>配置tasks.json文件</strong><br>
+选择Tasks: Configure Task命令<br>
+此时会在配置目录生成一个tasks.json文件</p>
+<pre><code>{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+        "label": "echo",
+        "type": "shell",
+        "command": "echo Hello"
+    }
+  ]
+}
+</code></pre>
+<p>修改该配置文件如下</p>
+<pre><code> "tasks": [
+    {
+        "label": "c++",
+        "command": "clang++",
+        "type": "shell",
+        "args": [
+            "hello.cpp",
+            "-std=c++11",
+            "-g"
+        ],
+        "presentation": {
+            "echo": true,
+            "reveal": "always",
+            "focus": false,
+            "panel": "shared"
+        }
+    }
+]
+</code></pre>
+<p>该文件其实就是一个命令行构建工具<br>
+把运行程序时在终端输入的命令和参数对于"command"和"args"的值<br>
+输入shift+command+b，便可构建成功，生成可执行文件a.out</p>
+<p><strong>配置launch.json文件</strong><br>
+选择Debug: Open launch.json命令<br>
+此时会在配置目录生成一个launch.json文件</p>
+<pre><code>{
+// 使用 IntelliSense 了解相关属性。 
+// 悬停以查看现有属性的描述。
+// 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+"version": "0.2.0",
+"configurations": [
+    {
+        "name": "(lldb) Launch",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "enter program name, for example ${workspaceFolder}/a.out",
+        "args": [],
+        "stopAtEntry": false,
+        "cwd": "${workspaceFolder}",
+        "environment": [],
+        "externalConsole": true,
+        "MIMode": "lldb"
+    }
+  ]
+}
+</code></pre>
+<p>修改文件如下</p>
+<pre><code> "configurations": [
+    {
+        "name": "c/c++ Launch",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceFolder}/a.out",
+        "args": [],
+        "stopAtEntry": false,
+        "cwd": "${workspaceFolder}",
+        "environment": [],
+        "externalConsole": true,
+        "MIMode": "lldb",
+        "preLaunchTask":"c++"
+    }
+]
+</code></pre>
+<p>preLaunchTask后面配置的是task的label，作用是当源代码发生改变时，启动调试会自动编译，而不用主动输入shift+command+b进行编译<br>
+该文件是一个配置调试的文件</p>
+<p><strong>json文件说明</strong><br>
+上述3个文件需要做一定的修改</p>
+<h4>5. 开启调试</h4>
+<div class="image-package">
+<div class="image-container" style="max-width: 700px; max-height: 516px;">
+<div class="image-container-fill" style="padding-bottom: 64.18%;"></div>
+<div class="image-view" data-width="804" data-height="516"><img data-original-src="//upload-images.jianshu.io/upload_images/5352666-4608735837444819.png" data-original-width="804" data-original-height="516" data-original-format="image/png" data-original-filesize="63322"></div>
+</div>
+<div class="image-caption">调试视图.png</div>
+</div>
+<p>修改hello.cpp</p>
+<pre><code>#include&lt;stdio.h&gt;
+
+int
+main()
+{
+   printf("Hello World\nWelcome to go to C++\n");
+}
+</code></pre>
+<p>点击调试汉字旁边的绿色小三角，就会出现执行结果</p>
+<br>
+<div class="image-package">
+<div class="image-container" style="max-width: 700px; max-height: 428px;">
+<div class="image-container-fill" style="padding-bottom: 41.39%;"></div>
+<div class="image-view" data-width="1034" data-height="428"><img data-original-src="//upload-images.jianshu.io/upload_images/5352666-8956782c242e9420.png" data-original-width="1034" data-original-height="428" data-original-format="image/png" data-original-filesize="94048"></div>
+</div>
+<div class="image-caption">执行结果.png</div>
+</div>
+<p>至此一个简单的c/c++程序就完成了从编写到执行的过程</p>
+
+          </div>
+        </div>
+    </div>
+
+    <!-- 如果是付费文章，未购买，则显示购买按钮 -->
+
+    <!-- 连载目录项 -->
+
+    <!-- 如果是付费文章 -->
+      <!-- 如果是付费连载，已购买，且作者允许赞赏，则显示付费信息和赞赏 -->
+        <div data-vcomp="free-reward-panel"></div>
+
+      <div class="show-foot">
+        <a class="notebook" href="/nb/14892889">
+          <i class="iconfont ic-search-notebook"></i>
+          <span>C/C++</span>
+</a>        <div class="copyright" data-toggle="tooltip" data-html="true" data-original-title="转载请联系作者获得授权，并标注“简书作者”。">
+          © 著作权归作者所有
+        </div>
+        <div class="modal-wrap" data-report-note>
+          <a id="report-modal">举报文章</a>
+        </div>
+      </div>
+
+      <!-- 文章底部作者信息 -->
+        <div class="follow-detail">
+          <div class="info">
+            <a class="avatar" href="/u/c93e809dafc4">
+              <img src="//upload.jianshu.io/users/upload_avatars/5352666/740b1543-feb2-49ab-8220-bbc0f52b6482?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96" alt="96" />
+</a>            <div props-data-classes="user-follow-button-footer" data-author-follow-button></div>
+            <a class="title" href="/u/c93e809dafc4">sofarsogoo_932d</a>
+          </div>
+        </div>
+
+    <div class="meta-bottom">
+      <div class="btn like-group"></div>
+      <div class="share-group">
+        <a class="share-circle" data-action="weixin-share" data-toggle="tooltip" data-original-title="分享到微信">
+          <i class="iconfont ic-wechat"></i>
+        </a>
+        <a class="share-circle" data-action="weibo-share" data-toggle="tooltip" href="javascript:void((function(s,d,e,r,l,p,t,z,c){var%20f=&#39;http://v.t.sina.com.cn/share/share.php?appkey=1881139527&#39;,u=z||d.location,p=[&#39;&amp;url=&#39;,e(u),&#39;&amp;title=&#39;,e(t||d.title),&#39;&amp;source=&#39;,e(r),&#39;&amp;sourceUrl=&#39;,e(l),&#39;&amp;content=&#39;,c||&#39;gb2312&#39;,&#39;&amp;pic=&#39;,e(p||&#39;&#39;)].join(&#39;&#39;);function%20a(){if(!window.open([f,p].join(&#39;&#39;),&#39;mb&#39;,[&#39;toolbar=0,status=0,resizable=1,width=440,height=430,left=&#39;,(s.width-440)/2,&#39;,top=&#39;,(s.height-430)/2].join(&#39;&#39;)))u.href=[f,p].join(&#39;&#39;);};if(/Firefox/.test(navigator.userAgent))setTimeout(a,0);else%20a();})(screen,document,encodeURIComponent,&#39;&#39;,&#39;&#39;,&#39;&#39;, &#39;推荐 sofarsogoo_932d 的文章《Mac在VSCode中搭建C/C++环境》（ 分享自 @简书 ）&#39;,&#39;https://www.jianshu.com/p/050fa455bc74?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=weibo&#39;,&#39;页面编码gb2312|utf-8默认gb2312&#39;));" data-original-title="分享到微博">
+          <i class="iconfont ic-weibo"></i>
+        </a>
+        <a class="share-circle" data-toggle="tooltip"  id="longshare" target="_blank">
+            <div class="qrcode" id="qrcode">
+             <img src="//cdn2.jianshu.io/assets/web/download-index-side-qrcode-cb13fc9106a478795f8d10f9f632fccf.png" alt="Download index side qrcode" />
+             <p>下载app生成长微博图片</p>
+             </div>
+          <i class="iconfont ic-picture"></i>
+        </a>
+        <a class="share-circle more-share" tabindex="0" data-toggle="popover" data-placement="top" data-html="true" data-trigger="focus" href="javascript:void(0);" data-content='
+          <ul class="share-list">
+            <li><a href="javascript:void(function(){var d=document,e=encodeURIComponent,r=&#39;http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=&#39;+e(&#39;https://www.jianshu.com/p/050fa455bc74?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=qzone&#39;)+&#39;&amp;title=&#39;+e(&#39;推荐 sofarsogoo_932d 的文章《Mac在VSCode中搭建C/C++环境》&#39;),x=function(){if(!window.open(r,&#39;qzone&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=600,height=600&#39;))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();"><i class="social-icon-sprite social-icon-zone"></i><span>分享到QQ空间</span></a></li>
+            <li><a href="javascript:void(function(){var d=document,e=encodeURIComponent,r=&#39;https://twitter.com/share?url=&#39;+e(&#39;https://www.jianshu.com/p/050fa455bc74?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=twitter&#39;)+&#39;&amp;text=&#39;+e(&#39;推荐 sofarsogoo_932d 的文章《Mac在VSCode中搭建C/C++环境》（ 分享自 @jianshucom ）&#39;)+&#39;&amp;related=&#39;+e(&#39;jianshucom&#39;),x=function(){if(!window.open(r,&#39;twitter&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=600,height=600&#39;))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();"><i class="social-icon-sprite social-icon-twitter"></i><span>分享到Twitter</span></a></li>
+            <li><a href="javascript:void(function(){var d=document,e=encodeURIComponent,r=&#39;https://www.facebook.com/dialog/share?app_id=483126645039390&amp;display=popup&amp;href=https://www.jianshu.com/p/050fa455bc74?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=facebook&#39;,x=function(){if(!window.open(r,&#39;facebook&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330&#39;))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();"><i class="social-icon-sprite social-icon-facebook"></i><span>分享到Facebook</span></a></li>
+            <li><a href="javascript:void(function(){var d=document,e=encodeURIComponent,r=&#39;https://plus.google.com/share?url=&#39;+e(&#39;https://www.jianshu.com/p/050fa455bc74?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=google_plus&#39;),x=function(){if(!window.open(r,&#39;google_plus&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330&#39;))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();"><i class="social-icon-sprite social-icon-google"></i><span>分享到Google+</span></a></li>
+            <li><a href="javascript:void(function(){var d=document,e=encodeURIComponent,s1=window.getSelection,s2=d.getSelection,s3=d.selection,s=s1?s1():s2?s2():s3?s3.createRange().text:&#39;&#39;,r=&#39;http://www.douban.com/recommend/?url=&#39;+e(&#39;https://www.jianshu.com/p/050fa455bc74?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=douban&#39;)+&#39;&amp;title=&#39;+e(&#39;Mac在VSCode中搭建C/C++环境&#39;)+&#39;&amp;sel=&#39;+e(s)+&#39;&amp;v=1&#39;,x=function(){if(!window.open(r,&#39;douban&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330&#39;))location.href=r+&#39;&amp;r=1&#39;};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})()"><i class="social-icon-sprite social-icon-douban"></i><span>分享到豆瓣</span></a></li>
+          </ul>
+        '>更多分享</a>
+      </div>
+    </div>
+
+      <a id="web-note-ad-1" target="_blank" href="/apps/redirect?utm_source=note-bottom-click"><img src="//cdn2.jianshu.io/assets/web/web-note-ad-1-c2e1746859dbf03abe49248893c9bea4.png" alt="Web note ad 1" /></a>
+
+    <!--
+    <div id="note-comment-above-ad-container">
+      <span id="youdao-comment-ad" class="ad-badge">广告</span>
+    </div>
+    -->
+    <div id="vue_comment"></div>
+  </div>
+
+  <div class="vue-side-tool" props-data-props-show-qr-code="0"></div>
+</div>
+<div class="note-bottom">
+  <div class="js-included-collections"></div>
+  <div data-vcomp="recommended-notes" data-lazy="1.5" data-note-id="26694763"></div>
+
+  <!-- 相关文章 -->
+      <!-- 未登录用户 -->
+      <div class="seo-recommended-notes">
+
+            <div class="note have-img">
+              <a class="cover" target="_blank" href="/p/46fd0faecac1?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=seo_notes&amp;utm_source=recommendation">
+                <img src="//upload-images.jianshu.io/upload_images/7328262-54f7992145380c10.png?imageMogr2/auto-orient/strip|imageView2/1/w/300/h/240" alt="240" />
+</a>              <a class="title" target="_blank" href="/p/46fd0faecac1?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=seo_notes&amp;utm_source=recommendation">Spring Cloud</a>
+              <p class="description">Spring Cloud为开发人员提供了快速构建分布式系统中一些常见模式的工具（例如配置管理，服务发现，断路器，智能路由，微代理，控制总线）。分布式系统的协调导致了样板模式, 使用Spring Cloud开发人员可以快速地支持实现这些模式的服务和应用程序。他们将在任何分布式...</p>
+              <a class="author" target="_blank" href="/u/d90908cb0d85?utm_campaign=maleskine&amp;utm_content=user&amp;utm_medium=seo_notes&amp;utm_source=recommendation">
+                <div class="avatar">
+                  <img src="//cdn2.jianshu.io/assets/default_avatar/2-9636b13945b9ccf345bc98d0d81074eb.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/48/h/48" alt="48" />
+                </div>
+                <span class="name">卡卡罗2017</span>
+</a>            </div>
+
+            <div class="note ">
+                            <a class="title" target="_blank" href="/p/f9e7113a4ce2?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=seo_notes&amp;utm_source=recommendation">.bat脚本学习</a>
+              <p class="description">.bat脚本基本命令语法 目录 批处理的常见命令（未列举的命令还比较多，请查阅帮助信息） 1、REM 和 :: 2、ECHO 和 @ 3、PAUSE 4、ERRORLEVEL 5、TITLE 6、COLOR 7、mode 配置系统设备 8、GOTO 和 : 9、FIND 1...</p>
+              <a class="author" target="_blank" href="/u/b949c12f869e?utm_campaign=maleskine&amp;utm_content=user&amp;utm_medium=seo_notes&amp;utm_source=recommendation">
+                <div class="avatar">
+                  <img src="//upload.jianshu.io/users/upload_avatars/10253481/84af0daf-c98d-4d05-ac71-2e225ad1bd00.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/48/h/48" alt="48" />
+                </div>
+                <span class="name">庆庆庆庆庆</span>
+</a>            </div>
+
+            <div class="note ">
+                            <a class="title" target="_blank" href="/p/98c3ee1f1e65?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=seo_notes&amp;utm_source=recommendation">Deepin Linux 下用 vscode 调试 C/C++ 程序</a>
+              <p class="description">Deepin Linux 下用 vscode 调试 C/C++ 程序 现在网上的大部分类似博客都是错的、有问题的、麻烦的； 而你如果有幸读到我的这篇文章，那么恭喜你，我的是正确的，没问题的，简单的。 Deepin Linux 的问题 我的系统是：Deepin Linux 1...</p>
+              <a class="author" target="_blank" href="/u/aeb5c735d8de?utm_campaign=maleskine&amp;utm_content=user&amp;utm_medium=seo_notes&amp;utm_source=recommendation">
+                <div class="avatar">
+                  <img src="//upload.jianshu.io/users/upload_avatars/2692549/5d297de0-7015-4f89-9567-2ed81a255cdf.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/48/h/48" alt="48" />
+                </div>
+                <span class="name">仰望星空的先生</span>
+</a>            </div>
+
+            <div class="note ">
+                            <a class="title" target="_blank" href="/p/fb7d48083e5e?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=seo_notes&amp;utm_source=recommendation">Java面试宝典Beta5.0</a>
+              <p class="description">pdf下载地址：Java面试宝典 第一章内容介绍	20 第二章JavaSE基础	21 一、Java面向对象	21 1. 面向对象都有哪些特性以及你对这些特性的理解	21 2. 访问权限修饰符public、private、protected, 以及不写（默认）时的区别(201...</p>
+              <a class="author" target="_blank" href="/u/773a782d9d83?utm_campaign=maleskine&amp;utm_content=user&amp;utm_medium=seo_notes&amp;utm_source=recommendation">
+                <div class="avatar">
+                  <img src="//upload.jianshu.io/users/upload_avatars/6480773/e7eb1b5f-9375-4d65-a47f-f46719569b93?imageMogr2/auto-orient/strip|imageView2/1/w/48/h/48" alt="48" />
+                </div>
+                <span class="name">王震阳</span>
+</a>            </div>
+
+            <div class="note have-img">
+              <a class="cover" target="_blank" href="/p/bb430259b7af?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=seo_notes&amp;utm_source=recommendation">
+                <img src="//upload-images.jianshu.io/upload_images/3876477-c2a1ca94c0b40509.png?imageMogr2/auto-orient/strip|imageView2/1/w/300/h/240" alt="240" />
+</a>              <a class="title" target="_blank" href="/p/bb430259b7af?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=seo_notes&amp;utm_source=recommendation">在macOS下使用Visual Studio Code进行C/C++开发</a>
+              <p class="description">平时工作做C/C++方面的开发更多还是在Windows下使用Visual Studio，如果服务器或者通用组件需要跨平台，Windows上跑通后其他平台上编译发布，一般性问题通过Log,Dump什么的基本上也就够了；如果的确需要调试，有VisualGDB的存在也很方便；但在...</p>
+              <a class="author" target="_blank" href="/u/76e9c938a025?utm_campaign=maleskine&amp;utm_content=user&amp;utm_medium=seo_notes&amp;utm_source=recommendation">
+                <div class="avatar">
+                  <img src="//upload.jianshu.io/users/upload_avatars/3876477/4e0b29ad-2faa-4f8a-a87d-1c69baf8691d.png?imageMogr2/auto-orient/strip|imageView2/1/w/48/h/48" alt="48" />
+                </div>
+                <span class="name">stidio</span>
+</a>            </div>
+
+            <div class="note have-img">
+              <a class="cover" target="_blank" href="/p/bafe7e958d6e?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=seo_notes&amp;utm_source=recommendation">
+                <img src="//upload-images.jianshu.io/upload_images/4251603-1aae94d62ea5b2d6.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/300/h/240" alt="240" />
+</a>              <a class="title" target="_blank" href="/p/bafe7e958d6e?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=seo_notes&amp;utm_source=recommendation">连载——庶女的禁术 03</a>
+              <p class="description">他身子平平向后一挪，再次无声无息地缩进梁上那抹黑暗里，秦城目瞪口呆地看着眼前这一切，再次觉得武功真的是居家旅行杀人放火越狱必备之大招，一定要学！ 忽有脚步声由远及近，夹着男子爆出的粗狂玩笑荤话，被午夜冷风裹携着带入秦城耳中，秦城迅速将稻草堆拢在一处，合衣倒了下去。 她倒下的...</p>
+              <a class="author" target="_blank" href="/u/f9a4feb0ac3d?utm_campaign=maleskine&amp;utm_content=user&amp;utm_medium=seo_notes&amp;utm_source=recommendation">
+                <div class="avatar">
+                  <img src="//upload.jianshu.io/users/upload_avatars/4251603/8afd608d-f7e1-4a2b-990c-703871dd5808.png?imageMogr2/auto-orient/strip|imageView2/1/w/48/h/48" alt="48" />
+                </div>
+                <span class="name">兔酱的小红花阅读</span>
+</a>            </div>
+
+            <div class="note have-img">
+              <a class="cover" target="_blank" href="/p/44a1d7246065?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=seo_notes&amp;utm_source=recommendation">
+                <img src="//upload-images.jianshu.io/upload_images/6347375-0035f1d26b7b00c7.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/300/h/240" alt="240" />
+</a>              <a class="title" target="_blank" href="/p/44a1d7246065?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=seo_notes&amp;utm_source=recommendation">在这个操蛋的世界里，你还天真的以为自己是个正常人？</a>
+              <p class="description">文/郑小喵 -1- 半个月前，同学向我推荐了一本书——《昨夜的咖喱，明日的面包》。 那段时间正赶上考试，于是，便把它搁置一旁。 回家后，我兴趣正浓，那天筱雅来家里做客，我们刚好聊到好看的书籍，我便把这本书推荐给了她。 没想到之后的几个小时里，我俩抱着手机看着电子书，一发不可...</p>
+              <a class="author" target="_blank" href="/u/bc6b7b246312?utm_campaign=maleskine&amp;utm_content=user&amp;utm_medium=seo_notes&amp;utm_source=recommendation">
+                <div class="avatar">
+                  <img src="//upload.jianshu.io/users/upload_avatars/6347375/05a2f597-97df-4729-9a9e-bd66d4859bb3.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/48/h/48" alt="48" />
+                </div>
+                <span class="name">郑小喵</span>
+</a>            </div>
+
+            <div class="note have-img">
+              <a class="cover" target="_blank" href="/p/6380273caa2b?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=seo_notes&amp;utm_source=recommendation">
+                <img src="//upload-images.jianshu.io/upload_images/1748612-139d39bf7f15433f.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/300/h/240" alt="240" />
+</a>              <a class="title" target="_blank" href="/p/6380273caa2b?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=seo_notes&amp;utm_source=recommendation">姑娘，遇见你之前我从没想过我也会经历舍友“矛盾”</a>
+              <p class="description">犹豫了很久要不要这下这篇文章，如果不写，内心的积怨不知何处才能抒发，如果写了出来，但是又不想让qq、微信或者微博的好友知道这件事。我不想因为自己曝光舍友的生活，可能也是出于私心吧，毕竟所有情绪的来源都是我，是我的小心眼和看不惯，才导致了我现在的所思所想，自始至终都是我在发挥...</p>
+              <a class="author" target="_blank" href="/u/8922ce2bcf97?utm_campaign=maleskine&amp;utm_content=user&amp;utm_medium=seo_notes&amp;utm_source=recommendation">
+                <div class="avatar">
+                  <img src="//upload.jianshu.io/users/upload_avatars/1748612/d4167af0-08c4-4a2a-9542-b878fd7a26f3.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/48/h/48" alt="48" />
+                </div>
+                <span class="name">栗栗栗子姑娘</span>
+</a>            </div>
+
+            <div class="note have-img">
+              <a class="cover" target="_blank" href="/p/69578660e0fc?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=seo_notes&amp;utm_source=recommendation">
+                <img src="//upload-images.jianshu.io/upload_images/3573904-3bb31e1b8e2c361e.jpeg?imageMogr2/auto-orient/strip|imageView2/1/w/300/h/240" alt="240" />
+</a>              <a class="title" target="_blank" href="/p/69578660e0fc?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=seo_notes&amp;utm_source=recommendation">一个女孩</a>
+              <p class="description">有这么一个女孩，她在家人面前很叛逆，因为她想把自己表现得像个无知的小孩 有这样一个女孩，她在同学的眼里是个逗比，她很快乐，在朋友的眼里她很傻，因为她很想对别人好，可是在她对朋友好的时候，她的朋友却背叛她 有一个女孩，她在人群中，是一张大众脸，可她不想把自己表现的太突出，因为...</p>
+              <a class="author" target="_blank" href="/u/1fd0fbf6cc65?utm_campaign=maleskine&amp;utm_content=user&amp;utm_medium=seo_notes&amp;utm_source=recommendation">
+                <div class="avatar">
+                  <img src="//cdn2.jianshu.io/assets/default_avatar/14-0651acff782e7a18653d7530d6b27661.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/48/h/48" alt="48" />
+                </div>
+                <span class="name">兰教主</span>
+</a>            </div>
+      </div>
+</div>
+
+    <script type="application/json" data-name="page-data">{"user_signed_in":false,"locale":"zh-CN","os":"mac","read_mode":"day","read_font":"font2","note_show":{"is_author":false,"is_following_author":false,"is_liked_note":false,"follow_state":0,"uuid":"c87726cc-41f8-423d-a94b-aabb30a18d2b"},"note":{"id":26694763,"slug":"050fa455bc74","user_id":5352666,"notebook_id":14892889,"commentable":true,"likes_count":10,"views_count":21304,"public_wordage":394,"comments_count":3,"featured_comments_count":0,"total_rewards_count":0,"is_author":false,"paid_type":"free","paid":false,"paid_content_accessible":false,"author":{"nickname":"sofarsogoo_932d","total_wordage":53639,"followers_count":31,"total_likes_count":55}}}</script>
+    
+    <script src="//cdn2.jianshu.io/assets/babel-polyfill-d171e3dec4b6c15634dd.js" crossorigin="anonymous"></script>
+    <script src="//cdn2.jianshu.io/assets/web-base-f9857379932598ce54a6.js" crossorigin="anonymous"></script>
+<script src="//cdn2.jianshu.io/assets/web-0448d2cf0136b2115806.js" crossorigin="anonymous"></script>
+    
+    <script src="//cdn2.jianshu.io/assets/web/pages/notes/show/entry-79f25afb8c7cae826fef.js" crossorigin="anonymous"></script>
+    <script>
+  (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      }
+      else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+  </body>
+</html>

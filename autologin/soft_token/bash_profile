@@ -1,0 +1,8 @@
+export replace_by_your_username=chenhui13
+export replace_by_your_passwd="xxxxxx"
+# 登录到自己的relay，需设置relay用户名 + PIN码
+alias relay2='expect $HOME/.relay2.expect $replace_by_your_username $replace_by_your_passwd'
+# 如：配置自动登录自己开发机
+alias mydev='relay2 root@haha.com'
+# 如：配置自动登录其他开发机
+alias beep="sshpass -p \"xxxxxx\" ssh chenhui13@relay.yyyyy-int.com"

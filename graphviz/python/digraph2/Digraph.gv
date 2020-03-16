@@ -1,0 +1,6 @@
+digraph {
+	g [label="Graph"]
+	Session -> g
+	g -> Placeholder
+	g -> Variable
+}

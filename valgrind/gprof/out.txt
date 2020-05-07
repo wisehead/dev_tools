@@ -1,0 +1,196 @@
+--------------------------------------------------------------------------------
+Profile data file 'callgrind.out.20555' (creator: callgrind-3.8.1)
+--------------------------------------------------------------------------------
+I1 cache: 
+D1 cache: 
+LL cache: 
+Timerange: Basic block 0 - 170215306
+Trigger: Program termination
+Profiled target:  /ssd1/chenhui/dbpath/libexec/mysqld --defaults-file=/ssd1/chenhui/dbpath/etc/my.cnf --user=root (PID 20555, part 1)
+Events recorded:  Ir
+Events shown:     Ir
+Event sort order: Ir
+Thresholds:       99
+Include dirs:     
+User annotated:   
+Auto-annotation:  off
+
+--------------------------------------------------------------------------------
+         Ir 
+--------------------------------------------------------------------------------
+745,206,276  PROGRAM TOTALS
+
+--------------------------------------------------------------------------------
+        Ir  file:function
+--------------------------------------------------------------------------------
+91,668,568  ???:memset [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/ld-2.18.so]
+57,002,002  ???:_int_malloc [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/libc-2.18.so]
+55,166,532  ???:_int_free [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/libc-2.18.so]
+54,116,493  ???:pthread_mutex_lock [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/libpthread-2.18.so]
+46,365,924  ???:__pthread_mutex_unlock_usercnt [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/libpthread-2.18.so]
+44,252,976  /home/chenhui/mysql-5623-trunk/storage/innobase/log/log0recv.cc:recv_apply_hashed_log_recs(unsigned long) [/ssd1/chenhui/dbpath/libexec/mysqld]
+29,464,695  /home/chenhui/mysql-5623-trunk/storage/innobase/os/os0sync.cc:os_event_create() [/ssd1/chenhui/dbpath/libexec/mysqld]
+22,020,136  /home/chenhui/mysql-5623-trunk/storage/innobase/include/ut0link_buf.h:log_sys_close()
+21,926,240  /home/chenhui/mysql-5623-trunk/storage/innobase/include/ut0rnd.ic:buf_calc_page_new_checksum(unsigned char const*)
+18,937,926  ???:malloc [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/ld-2.18.so]
+17,701,172  /home/chenhui/mysql-5623-trunk/storage/innobase/include/sync0rw.ic:recv_apply_hashed_log_recs(unsigned long)
+16,267,654  /home/chenhui/mysql-5623-trunk/storage/innobase/sync/sync0arr.cc:sync_array_print_long_waits(unsigned long*, void const**) [/ssd1/chenhui/dbpath/libexec/mysqld]
+15,926,600  /home/chenhui/mysql-5623-trunk/storage/innobase/os/os0sync.cc:os_event_free(os_event*) [/ssd1/chenhui/dbpath/libexec/mysqld]
+14,734,472  /home/chenhui/mysql-5623-trunk/storage/innobase/os/os0sync.cc:os_fast_mutex_free_func(pthread_mutex_t*) [/ssd1/chenhui/dbpath/libexec/mysqld]
+14,349,816  ???:pthread_mutex_init [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/libpthread-2.18.so]
+14,068,172  /home/chenhui/mysql-5623-trunk/storage/perfschema/pfs_stat.h:init_instruments(PFS_global_param const*)
+12,582,958  /home/chenhui/mysql-5623-trunk/storage/innobase/include/ut0link_buf.h:log_sys_init(unsigned long, unsigned long, unsigned long)
+11,948,700  ???:pthread_cond_destroy@@GLIBC_2.3.2 [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/libpthread-2.18.so]
+ 7,966,300  /home/chenhui/mysql-5623-trunk/storage/innobase/ut/ut0mem.cc:ut_malloc_low(unsigned long, unsigned long) [/ssd1/chenhui/dbpath/libexec/mysqld]
+ 7,234,578  ???:free [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/ld-2.18.so]
+ 6,768,912  /home/chenhui/mysql-5623-trunk/storage/innobase/include/os0sync.ic:os_event_create()
+ 6,670,927  /home/chenhui/mysql-5623-trunk/strings/ctype-utf8.c:my_hash_sort_utf8 [/ssd1/chenhui/dbpath/libexec/mysqld]
+ 6,291,470  /home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/include/c++/4.8.2/bits/atomic_base.h:log_sys_init(unsigned long, unsigned long, unsigned long)
+ 5,836,765  /home/chenhui/mysql-5623-trunk/storage/innobase/include/ut0lst.h:os_event_free(os_event*)
+ 5,576,690  /home/chenhui/mysql-5623-trunk/storage/innobase/ut/ut0mem.cc:ut_free(void*) [/ssd1/chenhui/dbpath/libexec/mysqld]
+ 5,177,783  ???:pthread_cond_init@@GLIBC_2.3.2 [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/libpthread-2.18.so]
+ 4,777,980  /home/chenhui/mysql-5623-trunk/storage/innobase/include/os0sync.ic:os_event_free(os_event*)
+ 4,692,042  ???:do_lookup_x [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/ld-2.18.so]
+ 4,426,158  /home/chenhui/mysql-5623-trunk/storage/innobase/dict/dict0dict.cc:dict_close() [/ssd1/chenhui/dbpath/libexec/mysqld]
+ 4,240,110  /home/chenhui/mysql-5623-trunk/storage/perfschema/pfs.cc:init_mutex_v1 [/ssd1/chenhui/dbpath/libexec/mysqld]
+ 4,131,189  /home/chenhui/mysql-5623-trunk/storage/innobase/log/log0buf.cc:log_advance_dirty_pages_added_up_to_lsn(log_t&) [/ssd1/chenhui/dbpath/libexec/mysqld]
+ 4,112,944  /home/chenhui/mysql-5623-trunk/storage/innobase/log/log0write.cc:log_closer [/ssd1/chenhui/dbpath/libexec/mysqld]
+ 3,981,721  /home/chenhui/mysql-5623-trunk/storage/innobase/include/ut0lst.h:os_event_create()
+ 3,710,826  /home/chenhui/mysql-5623-trunk/storage/perfschema/pfs_instr_class.cc:find_mutex_class(unsigned int) [/ssd1/chenhui/dbpath/libexec/mysqld]
+ 3,676,204  /home/chenhui/mysql-5623-trunk/storage/innobase/sync/sync0rw.cc:rw_lock_create_func(rw_lock_t*, char const*, unsigned long) [/ssd1/chenhui/dbpath/libexec/mysqld]
+ 3,587,436  ???:pthread_mutex_destroy [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/libpthread-2.18.so]
+ 3,278,252  ???:pthread_mutex_unlock [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/libpthread-2.18.so]
+ 3,150,258  /home/chenhui/mysql-5623-trunk/storage/innobase/buf/buf0buf.cc:buf_all_freed() [/ssd1/chenhui/dbpath/libexec/mysqld]
+ 3,145,734  /home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/include/c++/4.8.2/bits/atomic_base.h:log_sys_close()
+ 3,078,603  ???:__strncmp_ssse3 [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/libc-2.18.so]
+ 2,626,800  /home/chenhui/mysql-5623-trunk/storage/innobase/sync/sync0sync.cc:mutex_create_func(ib_mutex_t*, char const*, unsigned long) [/ssd1/chenhui/dbpath/libexec/mysqld]
+ 2,622,745  /home/chenhui/mysql-5623-trunk/storage/innobase/include/sync0sync.ic:sync_close()
+ 2,511,216  /home/chenhui/mysql-5623-trunk/storage/innobase/buf/buf0buf.cc:buf_pool_create(buf_pool_t*, unsigned long, unsigned long, std::mutex*, dberr_t&) [/ssd1/chenhui/dbpath/libexec/mysqld]
+ 2,389,368  /home/chenhui/mysql-5623-trunk/storage/innobase/include/os0sync.ic:os_fast_mutex_free_func(pthread_mutex_t*)
+ 2,232,780  /home/chenhui/mysql-5623-trunk/storage/innobase/include/sync0sync.ic:mutex_create_func(ib_mutex_t*, char const*, unsigned long)
+ 2,038,215  ???:pthread_cond_timedwait@@GLIBC_2.3.2 [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/libpthread-2.18.so]
+ 1,991,135  ???:_dl_lookup_symbol_x [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/ld-2.18.so]
+ 1,985,546  /home/chenhui/mysql-5623-trunk/storage/innobase/include/mach0data.ic:mtr_read_ulint(unsigned char const*, unsigned long, mtr_t*) [/ssd1/chenhui/dbpath/libexec/mysqld]
+ 1,969,395  /home/chenhui/mysql-5623-trunk/storage/innobase/include/sync0sync.ic:rw_lock_create_func(rw_lock_t*, char const*, unsigned long)
+ 1,967,055  /home/chenhui/mysql-5623-trunk/storage/innobase/include/ut0lst.h:sync_close()
+ 1,883,926  ???:times [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/libc-2.18.so]
+ 1,837,725  /home/chenhui/mysql-5623-trunk/storage/innobase/buf/buf0buf.cc:buf_pool_get_oldest_modification_approx() [/ssd1/chenhui/dbpath/libexec/mysqld]
+ 1,742,464  /home/chenhui/mysql-5623-trunk/storage/innobase/include/sync0sync.ic:buf_pool_get_oldest_modification_approx()
+ 1,573,368  /home/chenhui/mysql-5623-trunk/storage/innobase/include/sync0sync.ic:buf_pool_create(buf_pool_t*, unsigned long, unsigned long, std::mutex*, dberr_t&)
+ 1,447,656  /home/chenhui/mysql-5623-trunk/storage/innobase/trx/trx0undo.cc:trx_undo_lists_init(trx_rseg_t*) [/ssd1/chenhui/dbpath/libexec/mysqld]
+ 1,442,525  /home/chenhui/mysql-5623-trunk/storage/innobase/sync/sync0sync.cc:sync_close() [/ssd1/chenhui/dbpath/libexec/mysqld]
+ 1,419,682  /home/chenhui/mysql-5623-trunk/strings/ctype-bin.c:my_hash_sort_bin [/ssd1/chenhui/dbpath/libexec/mysqld]
+ 1,377,069  /home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/include/c++/4.8.2/bits/atomic_base.h:log_advance_dirty_pages_added_up_to_lsn(log_t&)
+ 1,377,069  /home/chenhui/mysql-5623-trunk/storage/innobase/include/ut0link_buf.h:log_advance_dirty_pages_added_up_to_lsn(log_t&)
+ 1,313,401  /home/chenhui/mysql-5623-trunk/storage/innobase/include/ut0lst.h:mutex_create_func(ib_mutex_t*, char const*, unsigned long)
+ 1,312,931  /home/chenhui/mysql-5623-trunk/storage/innobase/include/ut0lst.h:rw_lock_create_func(rw_lock_t*, char const*, unsigned long)
+ 1,312,807  /home/chenhui/mysql-5623-trunk/mysys/my_rdtsc.c:my_timer_init [/ssd1/chenhui/dbpath/libexec/mysqld]
+ 1,310,744  /home/chenhui/mysql-5623-trunk/storage/innobase/include/ut0lst.h:buf_pool_create(buf_pool_t*, unsigned long, unsigned long, std::mutex*, dberr_t&)
+ 1,310,720  /home/chenhui/mysql-5623-trunk/storage/innobase/include/sync0rw.ic:buf_pool_create(buf_pool_t*, unsigned long, unsigned long, std::mutex*, dberr_t&)
+ 1,209,600  /home/chenhui/mysql-5623-trunk/storage/perfschema/pfs_stat.h:PFS_connection_slice::alloc_statements_slice(unsigned int)
+ 1,075,501  ???:check_match.9448 [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/ld-2.18.so]
+ 1,051,818  /home/chenhui/mysql-5623-trunk/storage/perfschema/pfs.cc:init_rwlock_v1 [/ssd1/chenhui/dbpath/libexec/mysqld]
+ 1,049,921  /home/chenhui/mysql-5623-trunk/storage/innobase/os/os0sync.cc:os_sync_free() [/ssd1/chenhui/dbpath/libexec/mysqld]
+   978,936  /home/chenhui/mysql-5623-trunk/storage/innobase/os/os0sync.cc:os_event_wait_time_low(os_event*, unsigned long, long) [/ssd1/chenhui/dbpath/libexec/mysqld]
+   920,763  /home/chenhui/mysql-5623-trunk/storage/perfschema/pfs_instr_class.cc:find_rwlock_class(unsigned int) [/ssd1/chenhui/dbpath/libexec/mysqld]
+   856,330  /home/chenhui/mysql-5623-trunk/mysys/my_rdtsc.c:my_timer_ticks [/ssd1/chenhui/dbpath/libexec/mysqld]
+   793,941  /home/chenhui/mysql-5623-trunk/storage/perfschema/pfs_instr.cc:init_instruments(PFS_global_param const*) [/ssd1/chenhui/dbpath/libexec/mysqld]
+   786,591  /home/chenhui/mysql-5623-trunk/storage/innobase/buf/buf0buf.cc:buf_pool_clear_hash_index() [/ssd1/chenhui/dbpath/libexec/mysqld]
+   782,685  /home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/include/c++/4.8.2/bits/atomic_base.h:log_closer
+   674,162  /home/chenhui/mysql-5623-trunk/mysys/charset.c:init_state_maps [/ssd1/chenhui/dbpath/libexec/mysqld]
+   656,838  /home/chenhui/mysql-5623-trunk/storage/innobase/include/trx0rseg.ic:trx_undo_lists_init(trx_rseg_t*)
+   656,260  /home/chenhui/mysql-5623-trunk/mysys_ssl/my_getopt.cc:getopt_compare_strings [/ssd1/chenhui/dbpath/libexec/mysqld]
+   655,408  /home/chenhui/mysql-5623-trunk/storage/innobase/include/buf0buf.ic:buf_pool_create(buf_pool_t*, unsigned long, unsigned long, std::mutex*, dberr_t&)
+   643,770  ???:__pthread_mutex_cond_lock [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/libpthread-2.18.so]
+   609,274  /home/chenhui/mysql-5623-trunk/storage/innobase/fil/fil0fil.cc:fil_validate() [/ssd1/chenhui/dbpath/libexec/mysqld]
+   596,487  /home/chenhui/mysql-5623-trunk/storage/innobase/include/ut0ut.ic:log_closer
+   585,219  ???:strcmp'2 [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/ld-2.18.so]
+   574,515  /home/chenhui/mysql-5623-trunk/storage/perfschema/pfs_stat.h:PFS_connection_slice::alloc_waits_slice(unsigned int)
+   573,823  /home/chenhui/mysql-5623-trunk/storage/innobase/ut/ut0ut.cc:ut_usectime(unsigned long*, unsigned long*) [/ssd1/chenhui/dbpath/libexec/mysqld]
+   533,348  /home/chenhui/mysql-5623-trunk/storage/innobase/os/os0file.cc:os_aio_simulated_handle(unsigned long, fil_node_t**, void**, unsigned long*) [/ssd1/chenhui/dbpath/libexec/mysqld]
+   518,990  ???:_dl_relocate_object [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/ld-2.18.so]
+   454,198  ???:ftime [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/libc-2.18.so]
+   393,216  /home/chenhui/mysql-5623-trunk/storage/innobase/include/page0zip.ic:buf_pool_create(buf_pool_t*, unsigned long, unsigned long, std::mutex*, dberr_t&)
+   382,650  /home/chenhui/mysql-5623-trunk/storage/innobase/os/os0sync.cc:os_event_reset(os_event*) [/ssd1/chenhui/dbpath/libexec/mysqld]
+   381,179  /home/chenhui/mysql-5623-trunk/storage/innobase/log/log0chkp.cc:log_get_available_for_checkpoint_lsn(log_t const&) [/ssd1/chenhui/dbpath/libexec/mysqld]
+   340,478  /home/chenhui/mysql-5623-trunk/storage/innobase/log/log0chkp.cc:log_checkpointer [/ssd1/chenhui/dbpath/libexec/mysqld]
+   288,101  /home/chenhui/mysql-5623-trunk/mysys/hash.c:my_hash_insert [/ssd1/chenhui/dbpath/libexec/mysqld]
+   276,571  /home/chenhui/mysql-5623-trunk/strings/xml.c:my_xml_scan [/ssd1/chenhui/dbpath/libexec/mysqld]
+   275,172  ???:__pthread_disable_asynccancel [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/libpthread-2.18.so]
+   274,662  /home/chenhui/mysql-5623-trunk/storage/perfschema/pfs_instr_class.cc:register_statement_class(char const*, unsigned int, int) [/ssd1/chenhui/dbpath/libexec/mysqld]
+   270,522  /home/chenhui/mysql-5623-trunk/storage/perfschema/pfs_instr_class.cc:register_mutex_class(char const*, unsigned int, int) [/ssd1/chenhui/dbpath/libexec/mysqld]
+   252,241  ???:__pthread_enable_asynccancel [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/libpthread-2.18.so]
+   240,384  ???:__lll_unlock_wake [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/libpthread-2.18.so]
+   240,279  ???:__memcpy_sse2_unaligned [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/libc-2.18.so]
+   238,137  ???:strcmp [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/ld-2.18.so]
+   235,360  /home/chenhui/mysql-5623-trunk/strings/strxmov.c:strxmov [/ssd1/chenhui/dbpath/libexec/mysqld]
+   230,000  /home/chenhui/mysql-5623-trunk/storage/perfschema/pfs_stat.h:init_digest(PFS_global_param const*)
+   227,614  /home/chenhui/mysql-5623-trunk/mysys_ssl/my_getopt.cc:findopt(char*, unsigned int, my_option const**, char const**) [/ssd1/chenhui/dbpath/libexec/mysqld]
+   225,015  /home/chenhui/mysql-5623-trunk/storage/perfschema/pfs_stat.h:PFS_connection_slice::alloc_stages_slice(unsigned int)
+   217,858  /home/chenhui/mysql-5623-trunk/storage/innobase/buf/buf0buf.cc:buf_pool_get_oldest_modification_lwm() [/ssd1/chenhui/dbpath/libexec/mysqld]
+   217,824  /home/chenhui/mysql-5623-trunk/storage/innobase/include/sync0sync.ic:log_checkpointer
+   217,808  /home/chenhui/mysql-5623-trunk/storage/innobase/include/buf0buf.ic:buf_pool_get_oldest_modification_approx()
+   215,485  ???:__memcmp_sse4_1 [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/libc-2.18.so]
+   215,083  /home/chenhui/mysql-5623-trunk/mysys/lf_hash.c:lfind [/ssd1/chenhui/dbpath/libexec/mysqld]
+   212,520  /home/chenhui/mysql-5623-trunk/storage/perfschema/pfs_stat.h:PFS_connection_slice::reset_statements_stats()
+   211,637  /home/chenhui/mysql-5623-trunk/mysys/my_alloc.c:alloc_root [/ssd1/chenhui/dbpath/libexec/mysqld]
+   205,591  ???:strlen [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/ld-2.18.so]
+   204,116  /home/chenhui/mysql-5623-trunk/strings/ctype.c:cs_enter [/ssd1/chenhui/dbpath/libexec/mysqld]
+   196,723  /home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/include/c++/4.8.2/ext/atomicity.h:log_advance_dirty_pages_added_up_to_lsn(log_t&)
+   195,676  /home/chenhui/mysql-5623-trunk/storage/perfschema/pfs_instr.cc:aggregate_thread(PFS_thread*, PFS_account*, PFS_user*, PFS_host*) [/ssd1/chenhui/dbpath/libexec/mysqld]
+   194,320  /opt/compiler/gcc-4.8.3-build-tmp/gcc-4.8.3/build_gcc/x86_64-baidu-linux-gnu/libgcc/../../../libgcc/unwind-dw2.c:execute_cfa_program [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/libgcc_s.so.1]
+   192,179  /home/chenhui/mysql-5623-trunk/strings/strcend.c:strcend [/ssd1/chenhui/dbpath/libexec/mysqld]
+   187,119  /home/chenhui/mysql-5623-trunk/strings/ctype.c:cs_leave [/ssd1/chenhui/dbpath/libexec/mysqld]
+   185,639  /home/chenhui/mysql-5623-trunk/storage/innobase/srv/srv0srv.cc:srv_update_cpu_usage() [/ssd1/chenhui/dbpath/libexec/mysqld]
+   184,295  /home/chenhui/mysql-5623-trunk/strings/xml.c:my_xml_parse [/ssd1/chenhui/dbpath/libexec/mysqld]
+   180,054  ???:vfprintf'2 [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/libc-2.18.so]
+   176,435  /home/chenhui/mysql-5623-trunk/strings/my_vsnprintf.c:my_vsnprintf_ex [/ssd1/chenhui/dbpath/libexec/mysqld]
+   172,945  /home/chenhui/mysql-5623-trunk/strings/ctype.c:cs_value [/ssd1/chenhui/dbpath/libexec/mysqld]
+   162,451  ???:__GI_strchr [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/libc-2.18.so]
+   153,769  /home/chenhui/mysql-5623-trunk/sql/table.cc:open_table_def(THD*, TABLE_SHARE*, unsigned int) [/ssd1/chenhui/dbpath/libexec/mysqld]
+   151,824  /opt/compiler/gcc-4.8.3-build-tmp/gcc-4.8.3/build_gcc/x86_64-baidu-linux-gnu/libgcc/../../../libgcc/unwind-dw2.c:uw_update_context_1 [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/libgcc_s.so.1]
+   149,481  /home/chenhui/mysql-5623-trunk/mysys/tree.c:tree_insert [/ssd1/chenhui/dbpath/libexec/mysqld]
+   148,335  /home/chenhui/mysql-5623-trunk/storage/innobase/ut/ut0rnd.cc:ut_find_prime(unsigned long) [/ssd1/chenhui/dbpath/libexec/mysqld]
+   148,015  /home/chenhui/mysql-5623-trunk/strings/ctype-utf8.c:my_strnncoll_utf8 [/ssd1/chenhui/dbpath/libexec/mysqld]
+   143,713  /home/chenhui/mysql-5623-trunk/sql/strfunc.cc:strconvert(charset_info_st*, char const*, charset_info_st*, char*, unsigned int, unsigned int*) [/ssd1/chenhui/dbpath/libexec/mysqld]
+   143,706  /home/chenhui/mysql-5623-trunk/storage/perfschema/pfs_instr_class.cc:register_stage_class(char const*, unsigned int, unsigned int, int) [/ssd1/chenhui/dbpath/libexec/mysqld]
+   143,545  /home/chenhui/mysql-5623-trunk/strings/strmake.c:strmake [/ssd1/chenhui/dbpath/libexec/mysqld]
+   140,958  /home/chenhui/mysql-5623-trunk/mysys/my_rdtsc.c:my_timer_milliseconds [/ssd1/chenhui/dbpath/libexec/mysqld]
+   140,224  ???:_L_unlock_386 [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/libpthread-2.18.so]
+   136,130  /home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/include/c++/4.8.2/bits/atomic_base.h:log_get_available_for_checkpoint_lsn(log_t const&)
+   134,851  /opt/compiler/gcc-4.8.3-build-tmp/gcc-4.8.3/build_gcc/x86_64-baidu-linux-gnu/libgcc/../../../libgcc/unwind-dw2-fde-dip.c:_Unwind_IteratePhdrCallback [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/libgcc_s.so.1]
+   127,158  /home/chenhui/mysql-5623-trunk/storage/innobase/include/os0sync.ic:os_event_reset(os_event*)
+   125,903  ???:_IO_default_xsputn [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/libc-2.18.so]
+   123,663  ???:_IO_vfscanf [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/libc-2.18.so]
+   122,536  ???:__strcmp_ssse3 [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/libc-2.18.so]
+   120,986  /home/chenhui/mysql-5623-trunk/mysys/hash.c:my_hash_first_from_hash_value [/ssd1/chenhui/dbpath/libexec/mysqld]
+   118,722  /home/chenhui/mysql-5623-trunk/storage/innobase/include/os0sync.ic:os_event_wait_time_low(os_event*, unsigned long, long)
+   115,094  /home/chenhui/mysql-5623-trunk/strings/strxnmov.c:strxnmov [/ssd1/chenhui/dbpath/libexec/mysqld]
+   110,849  /home/chenhui/mysql-5623-trunk/strings/ctype-mb.c:my_strnncollsp_mb_bin [/ssd1/chenhui/dbpath/libexec/mysqld]
+   110,799  /home/chenhui/.jumbo/var/jumbo/tmp/jumbo.v32OjRZvS/valgrind/src/valgrind-3.8.1/coregrind/m_trampoline.S:vgPlain_amd64_linux_REDIR_FOR_vgettimeofday [/home/chenhui/.jumbo/lib/valgrind/callgrind-amd64-linux]
+   108,550  /home/chenhui/mysql-5623-trunk/storage/innobase/ut/ut0ut.cc:ut_delay(unsigned long) [/ssd1/chenhui/dbpath/libexec/mysqld]
+   102,671  ???:_dl_name_match_p [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/ld-2.18.so]
+   100,851  /home/chenhui/mysql-5623-trunk/storage/perfschema/pfs_con_slice.cc:PFS_connection_slice::alloc_statements_slice(unsigned int) [/ssd1/chenhui/dbpath/libexec/mysqld]
+    97,328  /home/chenhui/mysql-5623-trunk/mysys/hash.c:cset_hash_sort_adapter [/ssd1/chenhui/dbpath/libexec/mysqld]
+    96,347  /home/chenhui/mysql-5623-trunk/storage/innobase/os/os0file.cc:os_aio_simulated_wake_handler_thread(unsigned long) [/ssd1/chenhui/dbpath/libexec/mysqld]
+    90,792  /home/chenhui/mysql-5623-trunk/sql/field.cc:make_field(TABLE_SHARE*, unsigned char*, unsigned int, unsigned char*, unsigned char, unsigned int, enum_field_types, charset_info_st const*, Field::geometry_type, Field::utype, st_typelib*, char const*) [/ssd1/chenhui/dbpath/libexec/mysqld]
+    87,136  /home/chenhui/mysql-5623-trunk/storage/innobase/os/os0file.cc:os_aio_array_create(unsigned long, unsigned long) [/ssd1/chenhui/dbpath/libexec/mysqld]
+    86,130  /opt/compiler/gcc-4.8.3-build-tmp/gcc-4.8.3/build_gcc/x86_64-baidu-linux-gnu/libgcc/../../../libgcc/unwind-dw2.c:uw_frame_state_for [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/libgcc_s.so.1]
+    85,904  /home/chenhui/mysql-5623-trunk/strings/ctype-utf8.c:my_wc_mb_filename [/ssd1/chenhui/dbpath/libexec/mysqld]
+    84,260  /home/chenhui/mysql-5623-trunk/storage/perfschema/pfs_stat.h:PFS_connection_slice::reset_waits_stats()
+    81,807  /home/chenhui/mysql-5623-trunk/storage/innobase/include/log0log.ic:log_checkpointer
+    80,817  /home/chenhui/mysql-5623-trunk/mysys_ssl/my_getopt.cc:my_handle_options [/ssd1/chenhui/dbpath/libexec/mysqld]
+    80,021  /home/chenhui/mysql-5623-trunk/storage/perfschema/pfs_digest.cc:init_digest(PFS_global_param const*) [/ssd1/chenhui/dbpath/libexec/mysqld]
+    79,167  /home/chenhui/mysql-5623-trunk/storage/innobase/sync/sync0arr.cc:sync_array_close() [/ssd1/chenhui/dbpath/libexec/mysqld]
+    78,823  /home/chenhui/mysql-5623-trunk/mysys/hash.c:my_hash_delete [/ssd1/chenhui/dbpath/libexec/mysqld]
+    78,745  /home/chenhui/mysql-5623-trunk/mysys_ssl/my_default.cc:search_default_file_with_ext(int (*)(void*, char const*, char const*), void*, char const*, char const*, char const*, int) [clone .part.3] [/ssd1/chenhui/dbpath/libexec/mysqld]
+    76,197  ???:malloc_consolidate [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/libc-2.18.so]
+    70,143  /home/chenhui/mysql-5623-trunk/strings/strnmov.c:strnmov [/ssd1/chenhui/dbpath/libexec/mysqld]
+    69,484  /home/chenhui/mysql-5623-trunk/mysys/my_malloc.c:my_malloc [/ssd1/chenhui/dbpath/libexec/mysqld]
+    69,195  ???:mprotect [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/ld-2.18.so]
+    69,099  /home/chenhui/mysql-5623-trunk/sql/sql_plugin.cc:construct_options(st_mem_root*, st_plugin_int*, my_option*) [clone .isra.37] [/ssd1/chenhui/dbpath/libexec/mysqld]
+    66,625  /home/chenhui/mysql-5623-trunk/mysys/my_once.c:my_once_alloc [/ssd1/chenhui/dbpath/libexec/mysqld]
+    65,202  /home/chenhui/mysql-5623-trunk/storage/innobase/os/os0file.cc:os_aio_array_validate(os_aio_array_t*) [/ssd1/chenhui/dbpath/libexec/mysqld]
+    63,936  /home/chenhui/mysql-5623-trunk/mysys/mf_dirname.c:dirname_length [/ssd1/chenhui/dbpath/libexec/mysqld]
+    63,635  /home/chenhui/mysql-5623-trunk/storage/perfschema/pfs_con_slice.cc:PFS_connection_slice::reset_waits_stats() [/ssd1/chenhui/dbpath/libexec/mysqld]
+

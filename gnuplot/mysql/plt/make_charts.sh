@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #
-#   2012 0503  wangjianying@baidu.com
+#   2012 0503  wangjianying@xxx.com
 #
 
 TOP=$(cd `dirname $0`;pwd)

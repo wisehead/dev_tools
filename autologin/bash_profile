@@ -1,6 +1,6 @@
 # 登录到自己的relay，需设置relay用户名 + PIN码
 alias relay='expect $HOME/.relay.expect $replace_by_your_username $replace_by_your_pin_code'
 # 如：配置自动登录自己开发机
-alias mydev='relay quyueshun@cp01-rdqa-dev394.cp01.baidu.com'
+alias mydev='relay quyueshun@cp01-rdqa-dev394.cp01.xxx.com'
 # 如：配置自动登录其他开发机
-alias carpo4='relay map@cq01-carpool-4.epc.baidu.com $replace_by_password_of_map'
+alias carpo4='relay map@cq01-carpool-4.epc.xxx.com $replace_by_password_of_map'

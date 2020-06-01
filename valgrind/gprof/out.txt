@@ -138,7 +138,7 @@ Auto-annotation:  off
    204,116  /home/chenhui/mysql-5623-trunk/strings/ctype.c:cs_enter [/ssd1/chenhui/dbpath/libexec/mysqld]
    196,723  /home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/include/c++/4.8.2/ext/atomicity.h:log_advance_dirty_pages_added_up_to_lsn(log_t&)
    195,676  /home/chenhui/mysql-5623-trunk/storage/perfschema/pfs_instr.cc:aggregate_thread(PFS_thread*, PFS_account*, PFS_user*, PFS_host*) [/ssd1/chenhui/dbpath/libexec/mysqld]
-   194,320  /opt/compiler/gcc-4.8.3-build-tmp/gcc-4.8.3/build_gcc/x86_64-baidu-linux-gnu/libgcc/../../../libgcc/unwind-dw2.c:execute_cfa_program [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/libgcc_s.so.1]
+   194,320  /opt/compiler/gcc-4.8.3-build-tmp/gcc-4.8.3/build_gcc/x86_64-xxx-linux-gnu/libgcc/../../../libgcc/unwind-dw2.c:execute_cfa_program [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/libgcc_s.so.1]
    192,179  /home/chenhui/mysql-5623-trunk/strings/strcend.c:strcend [/ssd1/chenhui/dbpath/libexec/mysqld]
    187,119  /home/chenhui/mysql-5623-trunk/strings/ctype.c:cs_leave [/ssd1/chenhui/dbpath/libexec/mysqld]
    185,639  /home/chenhui/mysql-5623-trunk/storage/innobase/srv/srv0srv.cc:srv_update_cpu_usage() [/ssd1/chenhui/dbpath/libexec/mysqld]
@@ -148,7 +148,7 @@ Auto-annotation:  off
    172,945  /home/chenhui/mysql-5623-trunk/strings/ctype.c:cs_value [/ssd1/chenhui/dbpath/libexec/mysqld]
    162,451  ???:__GI_strchr [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/libc-2.18.so]
    153,769  /home/chenhui/mysql-5623-trunk/sql/table.cc:open_table_def(THD*, TABLE_SHARE*, unsigned int) [/ssd1/chenhui/dbpath/libexec/mysqld]
-   151,824  /opt/compiler/gcc-4.8.3-build-tmp/gcc-4.8.3/build_gcc/x86_64-baidu-linux-gnu/libgcc/../../../libgcc/unwind-dw2.c:uw_update_context_1 [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/libgcc_s.so.1]
+   151,824  /opt/compiler/gcc-4.8.3-build-tmp/gcc-4.8.3/build_gcc/x86_64-xxx-linux-gnu/libgcc/../../../libgcc/unwind-dw2.c:uw_update_context_1 [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/libgcc_s.so.1]
    149,481  /home/chenhui/mysql-5623-trunk/mysys/tree.c:tree_insert [/ssd1/chenhui/dbpath/libexec/mysqld]
    148,335  /home/chenhui/mysql-5623-trunk/storage/innobase/ut/ut0rnd.cc:ut_find_prime(unsigned long) [/ssd1/chenhui/dbpath/libexec/mysqld]
    148,015  /home/chenhui/mysql-5623-trunk/strings/ctype-utf8.c:my_strnncoll_utf8 [/ssd1/chenhui/dbpath/libexec/mysqld]
@@ -158,7 +158,7 @@ Auto-annotation:  off
    140,958  /home/chenhui/mysql-5623-trunk/mysys/my_rdtsc.c:my_timer_milliseconds [/ssd1/chenhui/dbpath/libexec/mysqld]
    140,224  ???:_L_unlock_386 [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/libpthread-2.18.so]
    136,130  /home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/include/c++/4.8.2/bits/atomic_base.h:log_get_available_for_checkpoint_lsn(log_t const&)
-   134,851  /opt/compiler/gcc-4.8.3-build-tmp/gcc-4.8.3/build_gcc/x86_64-baidu-linux-gnu/libgcc/../../../libgcc/unwind-dw2-fde-dip.c:_Unwind_IteratePhdrCallback [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/libgcc_s.so.1]
+   134,851  /opt/compiler/gcc-4.8.3-build-tmp/gcc-4.8.3/build_gcc/x86_64-xxx-linux-gnu/libgcc/../../../libgcc/unwind-dw2-fde-dip.c:_Unwind_IteratePhdrCallback [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/libgcc_s.so.1]
    127,158  /home/chenhui/mysql-5623-trunk/storage/innobase/include/os0sync.ic:os_event_reset(os_event*)
    125,903  ???:_IO_default_xsputn [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/libc-2.18.so]
    123,663  ???:_IO_vfscanf [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/libc-2.18.so]
@@ -175,7 +175,7 @@ Auto-annotation:  off
     96,347  /home/chenhui/mysql-5623-trunk/storage/innobase/os/os0file.cc:os_aio_simulated_wake_handler_thread(unsigned long) [/ssd1/chenhui/dbpath/libexec/mysqld]
     90,792  /home/chenhui/mysql-5623-trunk/sql/field.cc:make_field(TABLE_SHARE*, unsigned char*, unsigned int, unsigned char*, unsigned char, unsigned int, enum_field_types, charset_info_st const*, Field::geometry_type, Field::utype, st_typelib*, char const*) [/ssd1/chenhui/dbpath/libexec/mysqld]
     87,136  /home/chenhui/mysql-5623-trunk/storage/innobase/os/os0file.cc:os_aio_array_create(unsigned long, unsigned long) [/ssd1/chenhui/dbpath/libexec/mysqld]
-    86,130  /opt/compiler/gcc-4.8.3-build-tmp/gcc-4.8.3/build_gcc/x86_64-baidu-linux-gnu/libgcc/../../../libgcc/unwind-dw2.c:uw_frame_state_for [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/libgcc_s.so.1]
+    86,130  /opt/compiler/gcc-4.8.3-build-tmp/gcc-4.8.3/build_gcc/x86_64-xxx-linux-gnu/libgcc/../../../libgcc/unwind-dw2.c:uw_frame_state_for [/home/opt/gcc-4.8.2.bpkg-r4/gcc-4.8.2.bpkg-r4/lib64/libgcc_s.so.1]
     85,904  /home/chenhui/mysql-5623-trunk/strings/ctype-utf8.c:my_wc_mb_filename [/ssd1/chenhui/dbpath/libexec/mysqld]
     84,260  /home/chenhui/mysql-5623-trunk/storage/perfschema/pfs_stat.h:PFS_connection_slice::reset_waits_stats()
     81,807  /home/chenhui/mysql-5623-trunk/storage/innobase/include/log0log.ic:log_checkpointer

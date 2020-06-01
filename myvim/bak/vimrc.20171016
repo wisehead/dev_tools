@@ -125,7 +125,7 @@ func SetTitle()
         call setline(1,         "\#############################################################")
         call append(line("."),  "\#   File Name: ".expand("%"))
         call append(line(".")+1,"\#     Autohor: Hui Chen (c) ".strftime("%Y"))
-        call append(line(".")+2,"\#        Mail: chenhui13@baidu.com")
+        call append(line(".")+2,"\#        Mail: chenhui13@xxx.com")
         call append(line(".")+3,"\# Create Time: ".strftime("%Y/%m/%d-%H:%M:%S"))
         call append(line(".")+4,"\#############################################################")
         call append(line(".")+5,"\#!/bin/sh ")
@@ -134,7 +134,7 @@ func SetTitle()
         call setline(1,         "/*******************************************************************************")
         call append(line("."),  " *      File Name: ".expand("%")."                                               ")
         call append(line(".")+1," *         Author: Hui Chen. (c) ".strftime("%Y")."                             ")
-        call append(line(".")+2," *           Mail: chenhui13@baidu.com                                        ")
+        call append(line(".")+2," *           Mail: chenhui13@xxx.com                                        ")
         call append(line(".")+3," *   Created Time: ".strftime("%Y/%m/%d-%H:%M                                    "))
         call append(line(".")+4," * Modified Time: ".strftime("%Y/%m/%d-%H:%M                                    "))
         call append(line(".")+5," *******************************************************************************/")
@@ -185,11 +185,11 @@ let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1 
 let g:go_highlight_build_constraints = 1
 
-"set tags=/home/chenhui/mysql-baidu-5623/tags
-"set tags=/home/chenhui/mysql-baidu-5623/mysqlcpp
-set tags+=/user/baidu/.vim/cpptags
-set tags+=/user/baidu/.vim/linuxtags
-"set tags+=/home/chenhui/mysql-baidu-5623/mysqlcpp
+"set tags=/home/chenhui/mysql-xxx-5623/tags
+"set tags=/home/chenhui/mysql-xxx-5623/mysqlcpp
+set tags+=/user/xxx/.vim/cpptags
+set tags+=/user/xxx/.vim/linuxtags
+"set tags+=/home/chenhui/mysql-xxx-5623/mysqlcpp
 
 
 "let OmniCpp_NamespaceSearch = 1

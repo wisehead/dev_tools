@@ -8,7 +8,7 @@ set HOST [lindex $argv 2]
 # [可选]开发机密码
 set PASSWORD [lindex $argv 3]
 # 登录relay
-spawn ssh $USER@relay01.baidu.com
+spawn ssh $USER@relay01.xxx.com
 # 打开调试模式
 #exp_internal 1
 # relay PIN码 + Token(Token需手动输入)
@@ -24,7 +24,7 @@ expect {
         exp_continue
     }
     # 自动登录开发机
-    -re "-bash-baidu-ssl*" {
+    -re "-bash-xxx-ssl*" {
         if { "$HOST" != "" } {
             send "ssh --silent $HOST\r"
             # [可选]自动开发机输入密码

@@ -18,7 +18,7 @@ expect {
         exp_continue
     }
     # 自动登录开发机
-    -re "-bash-baidu-ssl*" {
+    -re "-bash-xxx-ssl*" {
         if { "$HOST" != "" } {
             send "ssh --silent $HOST\r"
             # [可选]自动开发机输入密码

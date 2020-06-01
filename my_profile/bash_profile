@@ -29,13 +29,13 @@ export PATH=$PATH:.:/usr/local/homebrew/bin:/usr/local/go/bin
 
 #export PATH
 unset USERNAME
-export TOP=/Users/baidu/MachineLearning
+export TOP=/Users/xxx/MachineLearning
 alias cdtop="cd $TOP";
 #alias aaa="cd $TOP;vim -t log_write_up_to"
-export DESKTOP=/Users/baidu/Desktop
+export DESKTOP=/Users/xxx/Desktop
 alias cddesk="cd $DESKTOP"
-export DOWNLOAD=/Users/baidu/Desktop/temp/download
+export DOWNLOAD=/Users/xxx/Desktop/temp/download
 alias cddown="cd $DOWNLOAD"
 
 # 
-alias relay="/Users/baidu/auto_login"
+alias relay="/Users/xxx/auto_login"
